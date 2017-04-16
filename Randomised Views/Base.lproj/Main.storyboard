@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Randomised_Views" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y2Y-vm-Tx7" customClass="ContainerView" customModule="Randomised_Views" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="270" width="375" height="351"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o0r-Gy-ydn">
+                                <rect key="frame" x="137.5" y="629" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="eRr-nI-vUR"/>
+                                    <constraint firstAttribute="width" constant="100" id="ydI-Dh-Ca5"/>
+                                </constraints>
+                                <state key="normal" title="Draw Words"/>
+                                <connections>
+                                    <action selector="reloadButtonPressedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xIz-BF-hTi"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="y2Y-vm-Tx7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="250" id="SwN-15-IEn"/>
+                            <constraint firstItem="y2Y-vm-Tx7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="WtY-We-24O"/>
+                            <constraint firstItem="o0r-Gy-ydn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="el4-9S-9Qi"/>
+                            <constraint firstAttribute="trailing" secondItem="y2Y-vm-Tx7" secondAttribute="trailing" id="n8X-g5-3ne"/>
+                            <constraint firstItem="o0r-Gy-ydn" firstAttribute="top" secondItem="y2Y-vm-Tx7" secondAttribute="bottom" constant="8" id="vJn-Do-Cz9"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="o0r-Gy-ydn" secondAttribute="bottom" constant="8" id="vpa-xF-vxx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="containerView" destination="y2Y-vm-Tx7" id="Ic3-qa-DT6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="73.5" y="136.5"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
+</document>
