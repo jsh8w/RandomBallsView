@@ -14,16 +14,18 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        let noOfCircles = Int(arc4random_uniform(15)) + 1
+        self.containerView.resetAndDrawCircles(count: noOfCircles, maxSize: 150.0)
     }
     
     @IBAction func reloadButtonPressed(sender: UIButton) {
-        self.drawContainerViewWords()
-    }
-    
-    func drawContainerViewWords() {
-        self.containerView.words = ["Hello", "this", "is", "a very very long string", "and", "these", "are", "test strings", "for the drawing", "logic"]
-        self.containerView.resetAndDrawWords()
+        let noOfCircles = Int(arc4random_uniform(15)) + 1
+        self.containerView.resetAndDrawCircles(count: noOfCircles, maxSize: 150.0)
     }
 }
 
