@@ -8,17 +8,14 @@
 
 import UIKit
 
-class WordView: UIView {
-    var title: String
+class CircleView: UIView {
     let colors = [UIColor.green, UIColor.red, UIColor.blue, UIColor.orange, UIColor.brown]
     
-    init(frame: CGRect, title: String) {
-        self.title = title
+    override init(frame: CGRect) {
         super.init(frame: frame)
         
         let color = self.randomColor()
         self.drawCircle(with: color)
-        self.drawLabel(with: title)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -30,19 +27,6 @@ class WordView: UIView {
         layer.path = UIBezierPath(ovalIn: CGRect(x: 0.0, y: 0.0, width: self.frame.width, height: self.frame.height)).cgPath
         layer.fillColor = color.cgColor
         self.layer.addSublayer(layer)
-    }
-    
-    func drawLabel(with title: String) {
-        
-        let margin: CGFloat = 5.0
-        let label = UILabel(frame: CGRect(x: margin, y: margin, width: self.frame.width - (margin * 2), height: self.frame.height - (margin * 2)))
-        label.text = title
-        label.textAlignment = .center
-        label.textColor = UIColor.white
-        label.font = UIFont.boldSystemFont(ofSize: 14.0)
-        label.numberOfLines = 0
-        label.lineBreakMode = .byWordWrapping
-        self.addSubview(label)
     }
     
     func randomColor() -> UIColor {
