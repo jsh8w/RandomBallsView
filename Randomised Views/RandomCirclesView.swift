@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ContainerView: UIView {
+class RandomCirclesView: UIView {
     var circleViewFrames:[CGRect] = []
 
     override init(frame: CGRect) {
@@ -36,11 +36,11 @@ class ContainerView: UIView {
         self.drawCircles(count: count, maxSize: maxSize)
     }
     
-    func drawCircles(count: Int, maxSize: CGFloat) {
+    private func drawCircles(count: Int, maxSize: CGFloat) {
         
         // Construct frames of circles and increase to maximum possible size
         while self.circleViewFrames.count == 0 {
-            self.circleViewFrames = self.constructCircleViewFrames(count: count)
+            self.circleViewFrames = self.constructCircleViewFrames(count: count, maxSize: maxSize)
         }
         self.maxmimiseFrameSizes(maximumWidth: maxSize)
         self.moveAndMaximiseFrameSizes(maximumWidth: maxSize)
@@ -53,11 +53,11 @@ class ContainerView: UIView {
         }
     }
     
-    func constructCircleViewFrames(count: Int) -> [CGRect] {
+    private func constructCircleViewFrames(count: Int, maxSize: CGFloat) -> [CGRect] {
         var frames: [CGRect] = []
         
         // Get an minimum width/height of the WordView
-        let initialDiameter: CGFloat = self.getMinimumDiameter(count: count)
+        let initialDiameter: CGFloat = self.getMinimumDiameter(count: count, maxSize: maxSize)
         let margin: CGFloat = 5.0
         let availableWidth = self.frame.width - (margin * 2) - initialDiameter
         let availableHeight = self.frame.height - (margin * 2) - initialDiameter
@@ -89,11 +89,11 @@ class ContainerView: UIView {
     }
     
     // Find the minimum frame of the circle that can be drawn be comparing the area of all circles and the size of the view
-    func getMinimumDiameter(count: Int) -> CGFloat {
+    private func getMinimumDiameter(count: Int, maxSize: CGFloat) -> CGFloat {
         
-        var minimumDiameter: CGFloat = 100.0
+        var minimumDiameter: CGFloat = maxSize
         var area = (minimumDiameter * minimumDiameter) * CGFloat(count)
-        let totalArea = (self.bounds.height - 75.0) * (self.bounds.width - 75.0)
+        let totalArea = (self.bounds.height - 100.0) * (self.bounds.width - 100.0)
         
         while area > totalArea {
             minimumDiameter -= 1.0
@@ -104,7 +104,7 @@ class ContainerView: UIView {
     }
     
     // Increase the size of the each circle until they intersect with another circle or the bounds of the view
-    func maxmimiseFrameSizes(maximumWidth: CGFloat) {
+    private func maxmimiseFrameSizes(maximumWidth: CGFloat) {
         
         var placedCircles:[CGRect] = []
         
@@ -129,7 +129,7 @@ class ContainerView: UIView {
     }
     
     // Attempt to move frames around and increase size of the circle
-    func moveAndMaximiseFrameSizes(maximumWidth: CGFloat) {
+    private func moveAndMaximiseFrameSizes(maximumWidth: CGFloat) {
         
         var movedAndPlacedCircles:[CGRect] = []
         while movedAndPlacedCircles.count != self.circleViewFrames.count {
@@ -182,7 +182,7 @@ class ContainerView: UIView {
     }
     
     // Get a random direction and return x, y values to move and remaining directions to try
-    func getDirectionWith(directions: [Int], change: CGFloat) -> (CGFloat, CGFloat, [Int]) {
+    private func getDirectionWith(directions: [Int], change: CGFloat) -> (CGFloat, CGFloat, [Int]) {
         
         var remainingDirections = directions
         let randomIndex = Int(arc4random_uniform(UInt32(directions.count - 1)))
@@ -222,7 +222,7 @@ class ContainerView: UIView {
     }
     
     // Incrase the same of a frame
-    func createNewFrame(oldFrame: CGRect, increaseInSize: CGFloat) -> CGRect {
+    private func createNewFrame(oldFrame: CGRect, increaseInSize: CGFloat) -> CGRect {
         let newX = oldFrame.origin.x - (increaseInSize / 2)
         let newY = oldFrame.origin.y - (increaseInSize / 2)
         let newDiameter = oldFrame.width + increaseInSize
@@ -232,7 +232,7 @@ class ContainerView: UIView {
     }
     
     // Checks frame is within the bounds of the view, and that the frame doesn't intersect with any other frames already drawn
-    func isFrameAvailable(oldFrame: CGRect?, newFrame: CGRect, existingFrames: [CGRect]) -> Bool {
+    private func isFrameAvailable(oldFrame: CGRect?, newFrame: CGRect, existingFrames: [CGRect]) -> Bool {
         
         let viewBounds = CGRect(x: 5.0, y: 5.0, width: self.bounds.width - 10.0, height: self.bounds.height - 10.0)
         
@@ -261,7 +261,7 @@ class ContainerView: UIView {
     }
     
     // Determines if the circles within two frames intersect
-    func circleFramesIntersect(frame1: CGRect, frame2: CGRect) -> Bool {
+    private func circleFramesIntersect(frame1: CGRect, frame2: CGRect) -> Bool {
         
         let radiusSum = (frame1.width / 2) + (frame2.width / 2)
         let distanceBetweenCenters = hypotf(Float(frame1.midX - frame2.midX), Float(frame1.midY - frame2.midY))

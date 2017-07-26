@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y2Y-vm-Tx7" customClass="ContainerView" customModule="Randomised_Views" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y2Y-vm-Tx7" customClass="RandomCirclesView" customModule="Randomised_Views" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -53,7 +53,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="containerView" destination="y2Y-vm-Tx7" id="Ic3-qa-DT6"/>
+                        <outlet property="randomCirclesView" destination="y2Y-vm-Tx7" id="EBf-pF-nv5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
