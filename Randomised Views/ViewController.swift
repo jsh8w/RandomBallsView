@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var containerView: ContainerView!
+    @IBOutlet weak var randomCirclesView: RandomCirclesView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,12 +20,12 @@ class ViewController: UIViewController {
         super.viewDidLayoutSubviews()
 
         let noOfCircles = Int(arc4random_uniform(15)) + 1
-        self.containerView.resetAndDrawCircles(count: noOfCircles, maxSize: 150.0)
+        self.randomCirclesView.resetAndDrawCircles(count: noOfCircles, maxSize: 150.0)
     }
     
     @IBAction func reloadButtonPressed(sender: UIButton) {
         let noOfCircles = Int(arc4random_uniform(15)) + 1
-        self.containerView.resetAndDrawCircles(count: noOfCircles, maxSize: 150.0)
+        self.randomCirclesView.resetAndDrawCircles(count: noOfCircles, maxSize: 150.0)
     }
 }
 

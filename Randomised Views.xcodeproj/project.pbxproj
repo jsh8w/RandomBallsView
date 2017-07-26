@@ -13,7 +13,7 @@
 		10BED0771EA02A3F003FFA5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10BED0761EA02A3F003FFA5A /* Assets.xcassets */; };
 		10BED07A1EA02A3F003FFA5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10BED0781EA02A3F003FFA5A /* LaunchScreen.storyboard */; };
 		10BED0851EA02A3F003FFA5A /* Randomised_ViewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BED0841EA02A3F003FFA5A /* Randomised_ViewsTests.swift */; };
-		10BED0931EA02A7D003FFA5A /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BED0921EA02A7D003FFA5A /* ContainerView.swift */; };
+		10BED0931EA02A7D003FFA5A /* RandomCirclesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BED0921EA02A7D003FFA5A /* RandomCirclesView.swift */; };
 		10BED0951EA02AE6003FFA5A /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BED0941EA02AE6003FFA5A /* CircleView.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,7 +38,7 @@
 		10BED0801EA02A3F003FFA5A /* Randomised ViewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Randomised ViewsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		10BED0841EA02A3F003FFA5A /* Randomised_ViewsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Randomised_ViewsTests.swift; sourceTree = "<group>"; };
 		10BED0861EA02A3F003FFA5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		10BED0921EA02A7D003FFA5A /* ContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
+		10BED0921EA02A7D003FFA5A /* RandomCirclesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomCirclesView.swift; sourceTree = "<group>"; };
 		10BED0941EA02AE6003FFA5A /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,7 +120,7 @@
 		10BED0911EA02A6C003FFA5A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				10BED0921EA02A7D003FFA5A /* ContainerView.swift */,
+				10BED0921EA02A7D003FFA5A /* RandomCirclesView.swift */,
 				10BED0941EA02AE6003FFA5A /* CircleView.swift */,
 			);
 			name = Views;
@@ -234,7 +234,7 @@
 				10BED0951EA02AE6003FFA5A /* CircleView.swift in Sources */,
 				10BED0721EA02A3F003FFA5A /* ViewController.swift in Sources */,
 				10BED0701EA02A3F003FFA5A /* AppDelegate.swift in Sources */,
-				10BED0931EA02A7D003FFA5A /* ContainerView.swift in Sources */,
+				10BED0931EA02A7D003FFA5A /* RandomCirclesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
